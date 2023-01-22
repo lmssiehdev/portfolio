@@ -971,10 +971,10 @@
   "resolved" "https://registry.npmjs.org/astring/-/astring-1.8.3.tgz"
   "version" "1.8.3"
 
-"astro-icon@^0.8.0":
-  "integrity" "sha512-sCzhZcl46BIyLJVg89hq5J4uQABn2psmGvK4cUaxib+M/kBI3TrPy1w3g2O5h/WcrTHLVN9LyxjgkD4lEJJFpw=="
-  "resolved" "https://registry.npmjs.org/astro-icon/-/astro-icon-0.8.0.tgz"
-  "version" "0.8.0"
+"astro-icon@^0.7.0":
+  "integrity" "sha512-tb5isK40aZFm1W4s3++YHxlHSAPS3zHJ3g51//mNCxEWvr8EPRvezwMtChC/IEFA4pI+hy059/vKGZhRri7twg=="
+  "resolved" "https://registry.npmjs.org/astro-icon/-/astro-icon-0.7.0.tgz"
+  "version" "0.7.0"
   dependencies:
     "node-fetch" "^3.1.0"
     "resolve-pkg" "^2.0.0"
