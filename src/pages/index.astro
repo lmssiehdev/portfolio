@@ -1,0 +1,23 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Navbar from '../components/Navbar.vue';
+import Header from '../components/Header.vue';
+import Projects from '../components/Projects.vue';
+import Footer from '../components/Footer.vue';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="max-w-[800px] m-auto px-2 font-augillion bg-[#f8edeb] text-[#403f43]">
+    <Navbar />
+    <Header class="my-20" />
+    <main class="my-20">
+      <Projects />
+    </main>
+		<Footer class="my-20" />
+	</body>
+</html>

@@ -1,0 +1,17 @@
+@font-face {
+	font-family: "Augillion";
+	src: url(/fonts/Augillion.otf);
+}
+
+@font-face {
+	font-family: "freight-text-pro";
+	src: url(/fonts/freight-text-pro_normal_700.ttf);
+}
+
+.font-augillion {
+	font-family: "Augillion", cursive, serif;
+}
+
+.font-freight {
+	font-family: "freight-text-pro", cursive, serif;
+}
