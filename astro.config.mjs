@@ -10,7 +10,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://lmssiehdev.github.com',
-  base: '/portfolio',
+  site: 'https://lmssieh.com',
   integrations: [mdx(), sitemap(), vue(), tailwind()]
 });
