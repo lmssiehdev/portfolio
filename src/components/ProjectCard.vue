@@ -25,7 +25,7 @@ const icons: {
 </script>
 <template>
   <div
-    class="flex flex-col m-auto sm:w-auto sm:m-0 md:flex-row sm:py-2 font-freight"
+    class="flex flex-col m-auto sm:w-auto sm:m-0 md:flex-row sm:py-2 font-raleway"
   >
     <div
       class="overflow-hidden hover:drop-shadow-[7px_7px_0_#34d399] transition-all min-w-0 sm:min-w-[450px] h-[280px]"
@@ -43,7 +43,7 @@ const icons: {
           :href="project.url"
           target="_blank"
           rel="noreferrer"
-          class="flex items-center text-2xl underline hover:text-orange-400"
+          class="font-augillion flex items-center text-2xl underline hover:text-orange-400"
         >
           {{ project.title }}
         </a>

@@ -5,14 +5,16 @@ import TwitterIcon from "./icons/TwitterIcon.vue";
 </script>
 
 <template>
-  <footer class="text-lg font-freight">
+  <footer class="text-lg font-raleway">
     <div>
       <h4
         class="py-2 text-green-400 text-[50px] font-size-[50px] leading-10 font-augillion"
       >
         get in touch!
       </h4>
-      <p>email me at hi[at]lmssieh.com</p>
+      <p>
+        email me at <span class="font-freight font-bold">hi@lmssieh.com</span>
+      </p>
     </div>
     <div class="pt-4">
       or find me at:

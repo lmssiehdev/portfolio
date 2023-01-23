@@ -39,10 +39,8 @@ const projectsInfo: IProject[] = [
       <h3
         class="font-augillion leading-10 py-2 text-orange-400 flex items-center gap-2"
       >
-        <span class="text-3xl">✨</span>
         <span class="text-5xl">featured</span>
       </h3>
-      <p>what i've been up to semi-recently</p>
     </div>
     <ProjectCard
       v-for="project in projectsInfo"
