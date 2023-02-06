@@ -7,7 +7,7 @@ export interface Props {
 	description: string;
 	image?: string;
 }
-const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
+const { title, description, image = '/placeholder-social.png' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -26,7 +26,7 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<!-- <meta property="og:image" content={new URL(image, Astro.url)} /> -->
+<meta property="og:image" content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
