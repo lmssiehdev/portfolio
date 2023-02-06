@@ -13,11 +13,11 @@ const projectsInfo: IProject[] = [
     icons: ["vue", "tailwind", "firebase"],
   },
   {
-    title: "Yume",
-    url: "https://yume-chi.vercel.app",
-    sourceCode: "https://github.com/lmssiehdev/yume",
+    title: "Calm Whisper",
+    url: "https://calmwhisper.com/",
+    sourceCode: "https://github.com/lmssiehdev/calmwhisper",
     description:
-      "Yume is an ambient noise app featuring a collection of soothing soundscapes, perfect for a relaxing and productive work environment.",
+      "calmwhisper is an ambient noise app featuring a collection of soothing soundscapes, perfect for a relaxing and productive work environment.",
     image: "/images/project-ss-02.png",
     icons: ["typescript", "react", "tailwind"],
   },
