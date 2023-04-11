@@ -8,7 +8,7 @@ const projectsInfo: IProject[] = [
     url: "https://redoit.app/",
     sourceCode: null,
     description:
-      "REDOIT! is a habit tracker web app that helps you build good habits and reach your goals.",
+      "REDOIT! is a habit tracking app that helps you reach your goals by creating and tracking positive habits.",
     image: "/images/project-ss-01.png",
     icons: ["vue", "tailwind", "firebase"],
   },
