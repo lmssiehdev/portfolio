@@ -10,7 +10,7 @@ const projectsInfo: IProject[] = [
     description:
       "REDOIT! is a habit tracking app that helps you reach your goals by creating and tracking positive habits.",
     image: "/images/project-ss-01.png",
-    icons: ["vue", "tailwind", "firebase"],
+    icons: ["typescript", "react", "tailwind", "firebase"],
   },
   {
     title: "Calm Whisper",
@@ -28,6 +28,15 @@ const projectsInfo: IProject[] = [
     description:
       "a free and purely cosmetic script that lets you use custom skins during games, it even lets you make your own skins!",
     image: "/images/project-ss-03.png",
+    icons: ["javascript"],
+  },
+  {
+    title: "Custom Surviv Skins",
+    url: "https://lmssieh.github.io/SUS-link-lengthener/",
+    sourceCode: null,
+    description:
+      "is a playful project transforms short links into long and SUS URLs composed of Among Us characters.",
+    image: "/images/project-ss-04.png",
     icons: ["javascript"],
   },
 ];
