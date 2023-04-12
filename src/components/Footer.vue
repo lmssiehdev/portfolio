@@ -24,7 +24,7 @@ import TwitterIcon from "./icons/TwitterIcon.vue";
 
           <a
             class="underline hover:text-orange-500"
-            href="https://github.com/lmssieh"
+            href="https://github.com/lmssiehdev"
             >github</a
           >
         </div>
