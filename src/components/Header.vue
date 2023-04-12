@@ -1,8 +1,12 @@
+<script setup lang="ts">
+import DancingChicken from "./DancingChicken.vue";
+</script>
+
 <template>
   <div>
-    <header class="flex flex-col-reverse sm:(flex-row gap-x-10)">
+    <header class="flex flex-col md:flex-row gap-x-10">
       <div class="items-end children:mx-auto">
-        <DancingChickens />
+        <DancingChicken />
       </div>
       <div class="flex-1 flex flex-col justify-center">
         <h2 class="text-3xl">
@@ -11,7 +15,7 @@
           </div>
         </h2>
         <p class="text-xl font-raleway">
-          a
+          <!-- a
           <span
             class="font-bold underline text-orange-400 cursor-pointer transition-all ease duration-300 hover:bg-orange-400 hover:text-white"
           >
@@ -22,8 +26,9 @@
             class="font-bold underline text-orange-400 cursor-pointer transition-all ease duration-300 hover:bg-orange-400 hover:text-white"
           >
             JavaScript applications
-          </span>
-          and creating things that can improve people's daily lives.
+          </span> and creating things that can improve people's daily lives. I'm a -->
+          creative developer/designer who loves to craft intuitive and visually
+          appealing solutions that captivate users.
         </p>
       </div>
     </header>
