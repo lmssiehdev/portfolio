@@ -4,7 +4,7 @@ import DancingChicken from "./DancingChicken.vue";
 
 <template>
   <div>
-    <header class="flex flex-col md:flex-row gap-x-10">
+    <header class="flex sm:flex-col flex-col-reverse md:flex-row gap-x-10">
       <div class="items-end children:mx-auto">
         <DancingChicken />
       </div>

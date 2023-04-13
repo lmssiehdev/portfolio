@@ -16,8 +16,8 @@ const handleButtonCLick = () => {
 </script>
 
 <template>
-  <div>
-    <div>
+  <div class="py-3 sm:py-0">
+    <div class="flex items-center justify-center">
       <img
         v-show="isEgging"
         alt="chicken_dancing_gif_3"
