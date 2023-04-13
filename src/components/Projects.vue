@@ -31,7 +31,7 @@ const projectsInfo: IProject[] = [
     icons: ["javascript"],
   },
   {
-    title: "Custom Surviv Skins",
+    title: "SUS link lengthener",
     url: "https://lmssieh.github.io/SUS-link-lengthener/",
     sourceCode: null,
     description:
