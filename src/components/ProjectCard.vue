@@ -25,7 +25,7 @@ const icons: {
 </script>
 <template>
   <div
-    class="flex flex-col m-auto sm:w-auto sm:m-0 md:flex-row sm:py-2 font-raleway"
+    class="flex flex-col m-auto sm:w-auto sm:m-0 md:flex-row sm:py-2 py-4 font-raleway"
   >
     <div
       class="overflow-hidden hover:drop-shadow-[7px_7px_0_#34d399] transition-all min-w-0 sm:min-w-[450px] h-[280px]"
