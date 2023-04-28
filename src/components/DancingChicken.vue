@@ -29,7 +29,7 @@ const handleButtonCLick = () => {
         src="/images/dance_08.gif"
       />
     </div>
-    <div class="flex justify-center" v-if="!isHidden">
+    <div class="flex justify-center" v-if="!isHidden && false">
       <button
         @click="handleButtonCLick"
         class="flex items-center gap-1 cursor-pointer text-sm font-raleway font-semibold"
