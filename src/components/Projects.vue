@@ -22,23 +22,22 @@ const projectsInfo: IProject[] = [
     icons: ["typescript", "react", "tailwind"],
   },
   {
-    title: "Custom Surviv Skins",
-    url: "https://greasyfork.org/en/scripts/394362",
-    sourceCode: "https://github.com/lmssieh/survivMods",
-    description:
-      "a free and purely cosmetic script that lets you use custom skins during games, it even lets you make your own skins!",
+    title: "librereads",
+    url: "https://librereads.vercel.app/",
+    sourceCode: "https://github.com/lmssiehdev/librereads",
+    description: "A free & open source Goodreads front-end.",
     image: "/images/project-ss-03.png",
-    icons: ["javascript"],
+    icons: ["typescript", "react", "tailwind"],
   },
-  {
-    title: "SUS link lengthener",
-    url: "https://lmssieh.github.io/SUS-link-lengthener/",
-    sourceCode: null,
-    description:
-      "is a playful project transforms short links into long and SUS URLs composed of Among Us characters.",
-    image: "/images/project-ss-04.png",
-    icons: ["javascript"],
-  },
+  // {
+  //   title: "SUS link lengthener",
+  //   url: "https://lmssieh.github.io/SUS-link-lengthener/",
+  //   sourceCode: null,
+  //   description:
+  //     "is a playful project transforms short links into long and SUS URLs composed of Among Us characters.",
+  //   image: "/images/project-ss-04.png",
+  //   icons: ["javascript"],
+  // },
 ];
 </script>
 
