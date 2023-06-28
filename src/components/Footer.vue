@@ -36,14 +36,14 @@ import TwitterIcon from "./icons/TwitterIcon.vue";
             >twitter</a
           >
         </div> -->
-        <div class="flex items-center gap-1">
+        <!-- <div class="flex items-center gap-1">
           <CodepenIcon class="h-6 w-6" />
           <a
             class="underline hover:text-orange-500"
             href="https://codepen.com/lmssieh"
             >codepen</a
           >
-        </div>
+        </div> -->
       </div>
     </div>
   </footer>
