@@ -52,7 +52,7 @@ const projectsInfo: IProject[] = [
     </div>
     <ProjectCard
       v-for="project in projectsInfo"
-      key="{project.title}"
+      :key="project.title"
       :project="project"
     />
     <div class="my-5" v-if="false">
