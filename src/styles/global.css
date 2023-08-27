@@ -1,34 +1,26 @@
 @font-face {
-	font-family: "Augillion";
-	src: url(/fonts/Augillion.otf);
+  font-family: "Augillion";
+  src: url(/fonts/Augillion.otf);
 }
 
 @font-face {
-	font-family: "freight-text-pro";
-	src: url(/fonts/freight-text-pro_normal_700.ttf);
-}
-
-
-@font-face {
-	font-family: "raleway";
-	src: url(/fonts/Raleway-Regular.ttf);
-	font-weight: 400;
+  font-family: "IBM Plex";
+  src: url(/fonts/IBMPlexSans-Regular.ttf);
+  font-weight: 400;
 }
 
 @font-face {
-	font-family: "raleway";
-	src: url(/fonts/Raleway-Bold.ttf);
-	font-weight: 700;
+  font-family: "GT America Mono";
+  src: url(/fonts/GT-America-Mono-Regular.woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url(/fonts/SpaceMono-Regular.woff);
+  font-weight: 400;
 }
 
 .font-augillion {
-	font-family: "Augillion", cursive, serif;
-}
-
-.font-freight {
-	font-family: "freight-text-pro", cursive, serif;
-}
-
-.font-raleway {
-	font-family: "raleway", sans-serif;
+  font-family: "Augillion", cursive, serif;
 }

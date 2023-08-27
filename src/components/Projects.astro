@@ -1,6 +1,6 @@
-<script lang="ts" setup>
+---
 import type { IProject } from "../types";
-import ProjectCard from "./ProjectCard.vue";
+import ProjectCard from "./ProjectCard.astro";
 
 const projectsInfo: IProject[] = [
   {
@@ -10,7 +10,7 @@ const projectsInfo: IProject[] = [
     description:
       "REDOIT! is a habit tracking app that helps you reach your goals by creating and tracking positive habits.",
     image: "/images/project-ss-01.png",
-    icons: ["typescript", "react", "tailwind", "firebase"],
+    icons: ["typescript", "react", "tailwind"],
   },
   {
     title: "Calm Whisper",
@@ -39,26 +39,24 @@ const projectsInfo: IProject[] = [
   //   icons: ["javascript"],
   // },
 ];
-</script>
+---
 
-<template>
+<div>
   <div>
-    <div>
-      <h3
-        class="font-augillion leading-10 py-2 text-orange-400 flex items-center gap-2"
-      >
-        <span class="text-5xl">featured</span>
-      </h3>
-    </div>
-    <ProjectCard
-      v-for="project in projectsInfo"
-      :key="project.title"
-      :project="project"
-    />
-    <div class="my-5" v-if="false">
-      <a href="/work" class="text-lg underline hover:text-orange-400">
-        see all projects ↗︎
-      </a>
-    </div>
+    <h3
+      class="font-augillion leading-10 py-2 text-orange-400 flex items-center gap-2"
+    >
+      <span class="text-5xl">featured</span>
+    </h3>
   </div>
-</template>
+  {
+    projectsInfo.map((project) => (
+      <ProjectCard key={project.url} project={project} />
+    ))
+  }
+  <div class="my-5" v-if="false">
+    <a href="/work" class="text-lg underline hover:text-orange-400">
+      see all projects ↗︎
+    </a>
+  </div>
+</div>
