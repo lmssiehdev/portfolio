@@ -1,0 +1,105 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* discord stuff */
+
+@layer base {
+  :root {
+    --saturation-factor: 1;
+    --primary-600: hsl(var(--primary-600-hsl) / 1);
+    --primary-600-hsl: 223 calc(var(--saturation-factor, 1) * 6.7%) 20.6%;
+    --primary-630: hsl(var(--primary-630-hsl) / 1);
+    --primary-630-hsl: 220 calc(var(--saturation-factor, 1) * 6.5%) 18%;
+    --primary-660: hsl(var(--primary-660-hsl) / 1);
+    --primary-660-hsl: 228 calc(var(--saturation-factor, 1) * 6.7%) 14.7%;
+    --background-primary: var(--primary-600);
+    --background-secondary: var(--primary-630);
+    --background-secondary-alt: var(--primary-660);
+    --primary: var(--white-500);
+    --white-500: hsl(var(--white-500-hsl) / 1);
+    --white-500-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+    --muted: var(--primary-330);
+    --primary-330: hsl(var(--primary-330-hsl) / 1);
+    --primary-330-hsl: 215 calc(var(--saturation-factor, 1) * 8.8%) 73.3%;
+    /* ---- */
+
+    --background: var(--primary-600);
+    --foreground: var(--primary-630);
+
+    --radius: 0.5rem;
+  }
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/inter-semibold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/noto-sans-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/noto-sans-semibold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "discord";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/discord-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "disocrd";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/discord-semibold.woff2") format("woff2");
+}
+
+body {
+  font-family: "discord", monospace;
+}
+
+.sr-only {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
+  /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+  white-space: nowrap;
+}

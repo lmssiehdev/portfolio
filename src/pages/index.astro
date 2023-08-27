@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Main.astro";
+import Link from "../components/ui/Link.astro";
+import Role from "../components/ui/Role.astro";
+---
+
+<Layout>
+  <div>
+    <h1>Howdy! 👋</h1>
+    <p class="py-1">
+      I'm Garlic (pronounced "Geylic"). I'm a web developer that thrives on
+      bringing ideas to life with code! I advocate for creative coding giving
+      you the confidence to build anything imaginable.
+    </p>
+    <p>
+      I enjoy speaking about this and showing people how to level up their
+      skills.
+    </p>
+  </div>
+  <div class="flex gap-2 my-4">
+    {["Typescript", "React", "Vue"].map((text) => <Role>{text}</Role>)}
+  </div>
+  <div class="grid grid-cols-2 gap-4 my-4">
+    {Array("Github", "Twitter", "Youtube").map((text) => <Link>{text}</Link>)}
+  </div>
+</Layout>
