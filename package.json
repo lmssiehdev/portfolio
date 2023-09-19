@@ -7,18 +7,25 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.7",
     "@astrojs/rss": "^2.4.4",
     "@astrojs/sitemap": "^2.0.2",
     "@astrojs/tailwind": "^4.0.0",
+    "@octokit/core": "^5.0.0",
     "astro": "^2.10.14",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "tailwindcss": "^3.0.24"
+    "obscenity": "^0.1.4",
+    "tailwindcss": "^3.0.24",
+    "valibot": "^0.13.1"
   },
   "devDependencies": {
-    "astro-iconify": "^1.2.0"
+    "astro-iconify": "^1.2.0",
+    "tailwind-scrollbar": "^3.0.5",
+    "vitest": "^0.34.3"
   }
 }
