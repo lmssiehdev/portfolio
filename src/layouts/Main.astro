@@ -1,10 +1,8 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Project from "../components/Project.astro";
-import Link from "../components/ui/Link.astro";
-import Role from "../components/ui/Role.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { ViewTransitions, fade, slide } from "astro:transitions";
 import clsx from "clsx";
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -13,17 +11,14 @@ const currentPath = Astro.url.pathname;
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <ViewTransitions />
   </head>
   <body
-    class="bg-foreground text-primary min-h-screen flex items-center justify-center"
+    class="bg-foreground text-primary flex justify-center py-28 scrollbar-thin scrollbar-thumb-darker scrollbar-track-black/20 scrollbar-thumb-rounded-md"
   >
-    <!-- <Header title={SITE_TITLE} /> -->
-
-    <!-- <Footer /> -->
-
     <main class="max-w-xl w-full bg-background rounded overflow-hidden">
       <header class="min-h-[106px] bg-rose-300 relative mb-14">
-        <div class="realtive">
+        <div class="realtive" transition:persist>
           <div
             class="h-[120px] w-[120px] bg-background rounded-full overflow-hidden flex items-center justify-center absolute top-[30px] left-[22px] right-0"
           >
@@ -38,42 +33,48 @@ const currentPath = Astro.url.pathname;
       </header>
       <div class="m-4 p-3 bg-black/50 rounded">
         <div>
-          <div class="font-semibold text-lg">garlic</div>
-          <div class="text-muted">geylic</div>
-        </div>
-        <div class="my-5">
-          <ul
-            class="flex gap-8 text-center text-sm border-b border-slate-200/20"
-          >
-            <li
-              class={clsx("pb-4 cursor-pointer flex-1", {
-                "border-b-2": currentPath === "/" ? true : false,
-              })}
+          <div>
+            <div class="font-semibold text-lg">garlic</div>
+            <div class="text-muted">geylic</div>
+          </div>
+          <div class="my-5">
+            <ul
+              class="flex gap-8 text-center text-sm border-b border-slate-200/20"
             >
-              <a href="/">About</a>
-            </li>
-            <li
-              class={clsx("pb-4 cursor-pointer flex-1", {
-                "border-b-2": currentPath === "/about" ? true : false,
-              })}
-            >
-              <a href="/about">Work</a>
-            </li>
-            <li
-              class={clsx("pb-4 cursor-pointer flex-1", {
-                "border-b-2": currentPath === "/til" ? true : false,
-              })}
-            >
-              <a href="/til">TIL</a>
-            </li>
-            <li
-              class={clsx("pb-4 cursor-pointer flex-1", {
-                "border-b-2": currentPath === "/guest-book" ? true : false,
-              })}
-            >
-              <a href="/guest-book">Guest Book</a>
-            </li>
-          </ul>
+              <li
+                class={clsx(" flex-1 ", {
+                  "border-b-2": currentPath === "/" ? true : false,
+                })}
+              >
+                <a class="pb-4 cursor-pointer inline-block" href="/">About</a>
+              </li>
+              <li
+                class={clsx(" flex-1 ", {
+                  "border-b-2": currentPath === "/about" ? true : false,
+                })}
+              >
+                <a class="pb-4 cursor-pointer inline-block" href="/about"
+                  >Work</a
+                >
+              </li>
+              <li
+                class={clsx(" flex-1 ", {
+                  "border-b-2": currentPath === "/til" ? true : false,
+                })}
+              >
+                <a class="pb-4 cursor-pointer inline-block" href="/til">TIL</a>
+              </li>
+              <li
+                class={clsx(" flex-1 ", {
+                  "border-b-2": currentPath === "/guest-book" ? true : false,
+                })}
+              >
+                <a class="pb-4 cursor-pointer inline-block" href="/guest-book"
+                  >Guest Book</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
         <slot />
       </div>

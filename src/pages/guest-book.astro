@@ -1,24 +1,154 @@
 ---
+import Button from "../components/ui/Button.astro";
+import Message from "../components/ui/Message.astro";
 import Layout from "../layouts/Main.astro";
+import type { MessageType } from "../types";
+
+const messages = [
+  {
+    username: "alliumnsk",
+    message: "I don't feel good these days; you're using me as a rubber duck.",
+    date: "05/16/2023 2:19 PM",
+  },
+  {
+    message: "shouldnt you get a job?",
+    date: "08/25/2023 11:47 PM",
+    username: "Jacek",
+    avatar:
+      "https://cdn.discordapp.com/avatars/527838048659046415/98e04ae086825b51c3e4e92bc897c8e4.webp",
+  },
+] as MessageType[];
 ---
 
 <Layout>
   <div>
-    <div class="bg-background rounded p-2 flex gap-4">
-      <div class="h-10 w-10 overflow-hidden rounded-full">
-        <img
-          class="w-full h-full"
-          src="https://cdn.discordapp.com/avatars/249492401519984640/44cdac697636a32d786e38b1deeb21fe.webp?size=100"
-        />
-      </div>
+    <form
+      id="guestBookForm"
+      onsubmit="
+      (e) => { e.preventDefaut() }
+      "
+      class="my-4"
+    >
       <div>
-        <span class="flex gap-2">
-          <span class="font-bold text-sky-400">Jacek</span>
-          <span class="text-xs text-muted self-center">08/25/2023 11:47 PM</span
-          >
-        </span>
-        <p>shouldnt you get a job?</p>
+        <h1 class="text-xl font-semibold">Guest Book Form</h1>
+        <p class="text-muted my-4">
+          Share your thoughts and leave your mark by submitting a message
+          through this form.
+        </p>
       </div>
+      <label class="border-b border-slate-200/20 pb-4 mb-4 flex gap-4">
+        <div
+          class="block font-bold opacity-70 uppercase text-sm tracking-wide min-w-[100px]"
+        >
+          Name
+          <span class="text-red-400 text-lg font-normal">*</span>
+        </div>
+        <input
+          class="bg-foreground text-muted/40 p-2 rounded-sm w-full"
+          type="text"
+          id="name"
+          name="name"
+          required
+          maxlength="40"
+          placeholder="Such Wow!"
+        />
+      </label>
+
+      <label class="border-b border-slate-200/20 pb-4 mb-4 flex gap-4">
+        <div
+          class="block font-bold opacity-70 uppercase text-sm tracking-wide min-w-[100px]"
+        >
+          Message
+          <span class="text-red-400 text-lg font-normal">*</span>
+        </div>
+
+        <textarea
+          class="bg-foreground text-muted/40 p-2 rounded-sm w-full h-20"
+          id="message"
+          name="message"
+          placeholder="Message #text"
+          required></textarea>
+      </label>
+      <label class="border-b border-slate-200/20 pb-4 mb-4 flex gap-4">
+        <div
+          class="block font-bold opacity-70 uppercase text-sm tracking-wide min-w-[100px]"
+        >
+          Avatar URL
+        </div>
+
+        <input
+          class="bg-foreground text-muted/40 p-2 rounded-sm w-full"
+          type="text"
+          id="avatar"
+          name="avatar"
+          placeholder="Avatar Url"
+        />
+      </label>
+      <p class="mb-2 text-sm text-muted">Note: submissions are moderated</p>
+      <Button type="submit" class="block" disabled>Send</Button>
+      <div id="submission-message" class="my-4"></div>
+    </form>
+    <div>
+      <h3 class="text-xl font-semibold">Submissions</h3>
+      {
+        messages.map(({ message, date, username, avatar }) => (
+          <Message
+            message={message}
+            date={date}
+            username={username}
+            avatar={avatar}
+          />
+        ))
+      }
     </div>
   </div>
 </Layout>
+
+<script>
+  // TODO: use a framework, vue
+  (() => {
+    typeof window !== "undefined" &&
+      document.addEventListener("DOMContentLoaded", function () {
+        if (localStorage.getItem("disable-guest-book-submit") === "true") {
+          return;
+        }
+
+        const form = document.querySelector(
+          "#guestBookForm"
+        ) as HTMLFormElement;
+        const formSubmitButton = form.querySelector(
+          "button"
+        ) as HTMLButtonElement;
+        formSubmitButton.disabled = false;
+
+        form?.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const formData = new FormData(e.currentTarget as HTMLFormElement);
+          const response = await fetch("/api/guest-book-submission", {
+            method: "POST",
+            body: formData,
+          });
+
+          const SUCESS_CSS = "text-green-300";
+          const FAIL_CSS = "text-red-300";
+
+          const submissionMessageELe = document.querySelector(
+            "#submission-message"
+          ) as HTMLDivElement;
+
+          if (response.status === 200) {
+            submissionMessageELe.classList.remove(FAIL_CSS);
+            submissionMessageELe.classList.add(SUCESS_CSS);
+            submissionMessageELe.textContent = "Submission successful.";
+          } else {
+            submissionMessageELe.classList.remove(SUCESS_CSS);
+            submissionMessageELe.classList.add(FAIL_CSS);
+            submissionMessageELe.textContent =
+              "Submissions are currently disabled. Please try again later.";
+          }
+          formSubmitButton.disabled = true;
+          localStorage.setItem("disable-guest-book-submit", "true");
+        });
+      });
+  })();
+</script>

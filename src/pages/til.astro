@@ -1,7 +1,32 @@
 ---
 import Layout from "../layouts/Main.astro";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 ---
 
+<!-- <img width={720} height={360} src={post.data.heroImage} alt="" /> -->
 <Layout>
-  <div>dance</div>
+  <section>
+    <ul>
+      {
+        posts.map((post) => (
+          <>
+            <li class="flex gap-3 items-center bg-background border-l-4 border-background/70 my-3 px-4 p-2 rounded">
+              <a href={`/blog/${post.slug}/`}>
+                <h4 class="font-semibold flex-1">{post.data.title}</h4>
+              </a>
+              <span class="text-muted opacity-60"> • </span>
+              <span class="text-sm text-muted">
+                <FormattedDate date={post.data.pubDate} />
+              </span>
+            </li>
+          </>
+        ))
+      }
+    </ul>
+  </section>
 </Layout>

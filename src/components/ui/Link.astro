@@ -3,9 +3,11 @@ import { Icon } from "astro-iconify";
 ---
 
 <div
-  class="flex items-center leading-normal justify-between border rounded-sm py-3 px-2 gap-4 hover:bg-foreground cursor-pointer"
+  class="flex items-center leading-normal justify-between border rounded-sm py-2 px-2 gap-4 hover:bg-foreground cursor-pointer text-sm"
 >
-  <div class="flex-1 whitespace-nowrap overflow-hidden text-ellipsis w-full">
+  <div
+    class="flex-1 whitespace-nowrap overflow-hidden text-ellipsis w-full font-semibold tracking-wide"
+  >
     <slot />
   </div>
   <Icon name="heroicons:arrow-up-right-20-solid" class="h-5 w-5" />

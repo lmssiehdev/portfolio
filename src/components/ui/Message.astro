@@ -1,0 +1,25 @@
+---
+import type { MessageType } from "../../types";
+const DEFAULT_IMAGE =
+  "https://cdn.discordapp.com/avatars/249492401519984640/44cdac697636a32d786e38b1deeb21fe.webp?size=100";
+
+const {
+  date,
+  message,
+  avatar = DEFAULT_IMAGE,
+  username,
+} = Astro.props as MessageType;
+---
+
+<div class="bg-background rounded p-2 flex gap-4 my-4">
+  <div class="h-10 w-10 overflow-hidden rounded-full">
+    <img class="w-full h-full" src={avatar} />
+  </div>
+  <div>
+    <span class="flex gap-2">
+      <span class="font-bold text-sky-400">{username}</span>
+      <span class="text-xs text-muted self-center">{date}</span>
+    </span>
+    <p>{message}</p>
+  </div>
+</div>

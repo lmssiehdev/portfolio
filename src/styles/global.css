@@ -27,45 +27,33 @@
     --muted: var(--primary-330);
     --primary-330: hsl(var(--primary-330-hsl) / 1);
     --primary-330-hsl: 215 calc(var(--saturation-factor, 1) * 8.8%) 73.3%;
+    --primary-730: 225 7.1% 11%;
     /* ---- */
+
+    --green-100: 137 90% 96.1%;
+    --green-150: 141 91.3% 86.5%;
+    --green-200: 143 93.5% 75.9%;
+    --green-250: 146 75.1% 59%;
+    --green-300: 146 65.4% 53.5%;
+    --green-345: 147 65.9% 43.7%;
+    --green-350: 145 65% 39.2%;
+    --green-400: 143 60.7% 35.9%;
+    --green-450: 141 56.6% 28%;
+    --green-500: 141 58.4% 24.5%;
+    --green-550: 139 61.7% 18.4%;
+    --green-600: 139 65.4% 15.9%;
+    --green-650: 139 68.8% 12.5%;
+    --green-700: 141 74.1% 10.6%;
+    --green-750: 140 84.6% 7.6%;
+    --green-800: 139 82.4% 6.7%;
+    --green-850: 133 70.4% 5.3%;
+    --green-900: 129 58.3% 4.7%;
 
     --background: var(--primary-600);
     --foreground: var(--primary-630);
 
     --radius: 0.5rem;
   }
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "inter";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/inter-regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "inter";
-  font-style: normal;
-  font-weight: 700;
-  src: url("../fonts/inter-semibold.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Noto Sans";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/noto-sans-regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Noto Sans";
-  font-style: normal;
-  font-weight: 600;
-  src: url("../fonts/noto-sans-semibold.woff2") format("woff2");
 }
 
 @font-face {
