@@ -18,7 +18,11 @@ import Role from "../components/ui/Role.astro";
     </p>
   </div>
   <div class="flex gap-2 my-4">
-    {["Typescript", "React", "Vue"].map((text) => <Role>{text}</Role>)}
+    {
+      ["Typescript", "React", "Vue"].map((text) => (
+        <Role color={text.toLowerCase()}>{text}</Role>
+      ))
+    }
   </div>
   <div class="grid grid-cols-2 gap-4 my-4">
     {Array("Github", "Twitter", "Youtube").map((text) => <Link>{text}</Link>)}

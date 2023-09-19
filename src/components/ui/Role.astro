@@ -1,6 +1,22 @@
+---
+import { clsx } from "clsx";
+const AVAILABLE_COLOR = {
+  typescript: "bg-[#3178c6]",
+  react: "bg-[#149eca]",
+  tailwind: "bg-[#38bdf8]",
+  vue: "bg-[#42b883]",
+};
+
+const { color } = Astro.props as {
+  color: keyof typeof AVAILABLE_COLOR;
+};
+
+const roleColor = AVAILABLE_COLOR[color] ?? AVAILABLE_COLOR["vue"];
+---
+
 <div
   class="flex items-center gap-2 max-w-[200px] text-xs bg-foreground rounded w-fit p-1 opacity-90"
 >
-  <span class="h-3 w-3 bg-red-400 block rounded-full"></span>
+  <span class={clsx("h-3 w-3 block rounded-full", roleColor)}></span>
   <slot />
 </div>
