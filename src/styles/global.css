@@ -60,14 +60,14 @@
   font-family: "discord";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/discord-regular.woff2") format("woff2");
+  src: url("/fonts/discord-regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "disocrd";
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/discord-semibold.woff2") format("woff2");
+  src: url("/fonts/discord-semibold.woff2") format("woff2");
 }
 
 body {
