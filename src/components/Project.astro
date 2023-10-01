@@ -1,19 +1,33 @@
+---
+import { Image } from "astro:assets";
+const { data } = Astro.props;
+
+const { image, title, description } = data;
+import { Icon } from "astro-iconify";
+---
+
 <div
   class="border-background border-l-4 p-4 bg-foreground rounded overflow-hidden"
 >
+  <div class="absolute top-0 left-0">
+    <Icon class="w-5 h-5" src="discord-icon" />
+  </div>
   <div>
     <a href="https://redoit.app/" target="_blank" class="font-semibold"
-      >lmssieh - portfolio</a
+      >{title}</a
     >
   </div>
   <p class="text-sm mt-4 opacity-80">
-    REDOIT! is a habit tracking app that helps you reach your goals by creating
-    and tracking positive habits.
+    {description}
   </p>
-  <div class="flex h-full overflow-hidden max-h-[250px] mt-4">
-    <img
-      class="rounded-sm max-w-full max-h-full object-cover aspect-[400/215]"
-      src="https://images-ext-1.discordapp.net/external/0X342NEAHUVnK0ju9A6VpBQOhIiU2lMoI-14o8HuV6M/https/lmssieh.com/placeholder-social.png?width=500&height=268"
+  <div class="flex overflow-hidden max-h-[350px] h-[300px] mt-4">
+    <Image
+      src={image}
+      alt=""
+      class="rounded-sm max-w-full max-h-full object-cover aspect-[400/215] object-top hover:object-bottom duration-500"
     />
+    <!-- <img
+      src="https://images-ext-1.discordapp.net/external/0X342NEAHUVnK0ju9A6VpBQOhIiU2lMoI-14o8HuV6M/https/lmssieh.com/placeholder-social.png?width=500&height=268"
+    /> -->
   </div>
 </div>

@@ -11,5 +11,6 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind()],
   experimental: {
     viewTransitions: true,
+    assets: true,
   },
 });

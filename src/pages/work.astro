@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Main.astro";
+import Project from "../components/Project.astro";
+import { Image } from "astro:assets";
+import RedoitPojectImage from "../assets/images/01.png";
+import LibrereadProjectImage from "../assets/images/03.png";
+
+const projectData = [
+  {
+    title: "Redoit",
+    description: `REDOIT! is a habit tracking app that helps you reach your goals by creating and tracking positive habits.`,
+    image: RedoitPojectImage,
+  },
+  {
+    title: "librereads",
+    description: `A privacy respecting alternative front-end for Goodreads.`,
+    image: LibrereadProjectImage,
+  },
+] as const;
+
+// TODO: find a better
+export type ProjectData = (typeof projectData)[0];
+---
+
+<Layout
+  title="About Me"
+  description="Lorem ipsum dolor sit amet"
+  pubDate={new Date("August 08 2021")}
+  heroImage="/blog-placeholder-about.jpg"
+>
+  <div class="flex flex-col gap-4">
+    {projectData.map((projectInfo) => <Project data={projectInfo} />)}
+  </div>
+</Layout>
