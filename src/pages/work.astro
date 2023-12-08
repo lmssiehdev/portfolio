@@ -1,9 +1,8 @@
 ---
-import Layout from "../layouts/Main.astro";
-import Project from "../components/Project.astro";
-import { Image } from "astro:assets";
 import RedoitPojectImage from "../assets/images/01.png";
 import LibrereadProjectImage from "../assets/images/03.png";
+import Project from "../components/Project.astro";
+import Layout from "../layouts/Main.astro";
 
 const projectData = [
   {
@@ -15,6 +14,12 @@ const projectData = [
     title: "librereads",
     description: `A privacy respecting alternative front-end for Goodreads.`,
     image: LibrereadProjectImage,
+  },
+  {
+    title: "anyone can cook",
+    description: `Encouraging home cooks to share their recipes within the Kitchen Stories community.`,
+    image:
+      "https://assets-global.website-files.com/5e0e761a473c7693458bb389/5fecd63f148d16276a9e05ce_cover-poll.jpg",
   },
 ] as const;
 
@@ -28,7 +33,10 @@ export type ProjectData = (typeof projectData)[0];
   pubDate={new Date("August 08 2021")}
   heroImage="/blog-placeholder-about.jpg"
 >
-  <div class="flex flex-col gap-4">
-    {projectData.map((projectInfo) => <Project data={projectInfo} />)}
+  <div>
+    <h2 class="text-xl font-medium mt-5 mb-10">My work</h2>
+    <div class="flex flex-col gap-4 relative">
+      {projectData.map((projectInfo) => <Project data={projectInfo} />)}
+    </div>
   </div>
 </Layout>

@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      fontFamily: {
+        wf: ["--font-wf"],
+      },
       colors: {
         darker: "hsl(var(--primary-730))",
         background: "var(--background-primary)",

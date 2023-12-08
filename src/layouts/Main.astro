@@ -3,6 +3,7 @@ import { ViewTransitions, fade, slide } from "astro:transitions";
 import clsx from "clsx";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import Button from "../components/ui/Button.astro";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -16,8 +17,10 @@ const currentPath = Astro.url.pathname;
   <body
     class="bg-foreground text-primary flex justify-center py-28 scrollbar-thin scrollbar-thumb-darker scrollbar-track-black/20 scrollbar-thumb-rounded-md"
   >
-    <main class="max-w-xl w-full bg-background rounded overflow-hidden">
-      <header class="min-h-[106px] bg-rose-300 relative mb-14">
+    <main
+      class="max-w-xl w-full bg-background rounded overflow-hidden shadow-xl"
+    >
+      <header class="min-h-[106px] bg-[#896039] relative mb-14">
         <div class="realtive" transition:persist>
           <div
             class="h-[120px] w-[120px] bg-background rounded-full overflow-hidden flex items-center justify-center absolute top-[30px] left-[22px] right-0"
@@ -25,7 +28,7 @@ const currentPath = Astro.url.pathname;
             <div class="w-[90%] h-[90%] rounded-full overflow-hidden">
               <img
                 class="h-full w-full"
-                src="https://cdn.discordapp.com/avatars/249492401519984640/44cdac697636a32d786e38b1deeb21fe.webp?size=100"
+                src="https://cdn.discordapp.com/avatars/1056973007437971497/f5b449cacb3f3afd9ef3ee849d3b1257.webp"
               />
             </div>
           </div>
@@ -34,8 +37,8 @@ const currentPath = Astro.url.pathname;
       <div class="m-4 p-3 bg-black/50 rounded">
         <div>
           <div>
-            <div class="font-semibold text-lg">garlic</div>
-            <div class="text-muted">geylic</div>
+            <div class="font-semibold text-lg">lmssieh</div>
+            <!-- <div class="text-muted">lmssieh#0000</div> -->
           </div>
           <div class="my-5">
             <ul
@@ -63,7 +66,7 @@ const currentPath = Astro.url.pathname;
               >
                 <a class="pb-4 cursor-pointer inline-block" href="/til">TIL</a>
               </li>
-              <li
+              <!-- <li
                 class={clsx(" flex-1 ", {
                   "border-b-2": currentPath === "/guest-book" ? true : false,
                 })}
@@ -71,7 +74,7 @@ const currentPath = Astro.url.pathname;
                 <a class="pb-4 cursor-pointer inline-block" href="/guest-book"
                   >Guest Book</a
                 >
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>

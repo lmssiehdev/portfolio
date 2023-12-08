@@ -2,29 +2,70 @@
 import Layout from "../layouts/Main.astro";
 import Link from "../components/ui/Link.astro";
 import Role from "../components/ui/Role.astro";
+import Project from "../components/Project.astro";
+import RedoitPojectImage from "../assets/images/01.png";
+import Wave from "../components/icons/Wave.astro";
+import Sparkles from "../components/icons/Sparkles.astro";
+import Mail from "../components/icons/Mail.astro";
+
+const projectData = [
+  {
+    title: "Redoit",
+    description: `REDOIT! is a habit tracking app that helps you reach your goals by creating and tracking positive habits.`,
+    image: RedoitPojectImage,
+  },
+] as const;
 ---
 
 <Layout>
-  <div>
-    <h1>Howdy! 👋</h1>
-    <p class="py-1">
-      I'm Garlic (pronounced "Geylic"). I'm a web developer that thrives on
-      bringing ideas to life with code! I advocate for creative coding giving
-      you the confidence to build anything imaginable.
-    </p>
-    <p>
-      I enjoy speaking about this and showing people how to level up their
-      skills.
-    </p>
+  <div class="my-5">
+    <div class="my-5">
+      <h1 class="flex gap-2 text-xl font-medium tracking-wide">
+        Hi! I'm lmssieh
+        <div class="h-5 w-5">
+          <Wave />
+        </div>
+      </h1>
+      <p class="py-1">
+        creative developer/designer who loves to craft intuitive and visually
+        appealing solutions that captivate users.
+      </p>
+      <p>Mainly Working with the following technologies</p>
+    </div>
+    <div class="flex gap-2 my-4">
+      {
+        ["Typescript", "React", "Vue"].map((text) => (
+          <Role color={text.toLowerCase()}>{text}</Role>
+        ))
+      }
+    </div>
   </div>
-  <div class="flex gap-2 my-4">
-    {
-      ["Typescript", "React", "Vue"].map((text) => (
-        <Role color={text.toLowerCase()}>{text}</Role>
-      ))
-    }
+
+  <div class="my-10">
+    <h2 class="text-xl font-medium pb-4 flex gap-2 items-center font-discord">
+      <div class="h-5 w-5">
+        <Sparkles />
+      </div>
+      Featured Work
+    </h2>
+    <div class="flex flex-col gap-4 relative">
+      {projectData.map((projectInfo) => <Project data={projectInfo} />)}
+    </div>
   </div>
-  <div class="grid grid-cols-2 gap-4 my-4">
-    {Array("Github", "Twitter", "Youtube").map((text) => <Link>{text}</Link>)}
+
+  <div class="my-5">
+    <h2 class="font-medium font-discord flex gap-2 items-center text-xl mb-2">
+      <span class="h-5 w-5">
+        <Mail />
+      </span>
+      Get in touch!
+    </h2>
+    <div class="flex items-center gap-1">
+      email me at lmssieh[at]proton[dot]com
+    </div>
+  </div>
+  <!-- <p class="mt-4 mb-1.5">or find me at:</p> -->
+  <div class="grid grid-cols-2 gap-2.5">
+    {Array("Github", "Twitter").map((text) => <Link>{text}</Link>)}
   </div>
 </Layout>
