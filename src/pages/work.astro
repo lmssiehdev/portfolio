@@ -1,5 +1,6 @@
 ---
-import RedoitPojectImage from "../assets/images/01.png";
+import type { keyof } from "valibot";
+import RedoitPojectImage from "../assets/images/redoit-project/redoit-ss-01.png";
 import LibrereadProjectImage from "../assets/images/03.png";
 import Project from "../components/Project.astro";
 import Layout from "../layouts/Main.astro";
@@ -9,18 +10,22 @@ const projectData = [
     title: "Redoit",
     description: `REDOIT! is a habit tracking app that helps you reach your goals by creating and tracking positive habits.`,
     image: RedoitPojectImage,
+    url: "/project/redoit",
+    openInNewTab: false,
   },
   {
     title: "librereads",
     description: `A privacy respecting alternative front-end for Goodreads.`,
     image: LibrereadProjectImage,
+    url: "https://github.com/lmssiehdev/librereads",
+    openInNewTab: true,
   },
-  {
-    title: "anyone can cook",
-    description: `Encouraging home cooks to share their recipes within the Kitchen Stories community.`,
-    image:
-      "https://assets-global.website-files.com/5e0e761a473c7693458bb389/5fecd63f148d16276a9e05ce_cover-poll.jpg",
-  },
+  // {
+  //   title: "anyone can cook",
+  //   description: `Encouraging home cooks to share their recipes within the Kitchen Stories community.`,
+  //   image:
+  //     "https://assets-global.website-files.com/5e0e761a473c7693458bb389/5fecd63f148d16276a9e05ce_cover-poll.jpg",
+  // },
 ] as const;
 
 // TODO: find a better

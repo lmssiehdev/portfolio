@@ -1,10 +1,9 @@
 ---
-import { ViewTransitions, fade, slide } from "astro:transitions";
+import { ViewTransitions } from "astro:transitions";
 import clsx from "clsx";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-import Button from "../components/ui/Button.astro";
-
+import "@fontsource-variable/work-sans";
 const currentPath = Astro.url.pathname;
 ---
 
@@ -61,10 +60,11 @@ const currentPath = Astro.url.pathname;
               </li>
               <li
                 class={clsx(" flex-1 ", {
-                  "border-b-2": currentPath === "/til" ? true : false,
+                  "border-b-2": currentPath === "/blog" ? true : false,
                 })}
               >
-                <a class="pb-4 cursor-pointer inline-block" href="/til">TIL</a>
+                <a class="pb-4 cursor-pointer inline-block" href="/blog">Blog</a
+                >
               </li>
               <!-- <li
                 class={clsx(" flex-1 ", {

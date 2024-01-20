@@ -7,11 +7,12 @@ import RedoitPojectImage from "../assets/images/01.png";
 import Wave from "../components/icons/Wave.astro";
 import Sparkles from "../components/icons/Sparkles.astro";
 import Mail from "../components/icons/Mail.astro";
+import ProjectStars from "../components/ProjectStars.astro";
 
 const projectData = [
   {
     title: "Redoit",
-    description: `REDOIT! is a habit tracking app that helps you reach your goals by creating and tracking positive habits.`,
+    description: `Redoit is an offline-first habit tracker, designed to help users build and maintain positive routines.`,
     image: RedoitPojectImage,
   },
 ] as const;
@@ -48,8 +49,12 @@ const projectData = [
       </div>
       Featured Work
     </h2>
-    <div class="flex flex-col gap-4 relative">
-      {projectData.map((projectInfo) => <Project data={projectInfo} />)}
+    <div class="relative">
+      <ProjectStars />
+
+      <div class="flex flex-col gap-4">
+        {projectData.map((projectInfo) => <Project data={projectInfo} />)}
+      </div>
     </div>
   </div>
 

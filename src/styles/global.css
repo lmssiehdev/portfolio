@@ -71,27 +71,8 @@
   src: url("/fonts/discord-semibold.woff2") format("woff2");
 }
 
-@font-face {
-  font-family: "WF";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/WFVisualSans-RegularText.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "WF";
-  font-style: normal;
-  font-weight: 500;
-  src: url("/fonts/WFVisualSans-Medium.woff2") format("woff2");
-}
-@font-face {
-  font-family: "WF";
-  font-style: normal;
-  font-weight: 600;
-  src: url("/fonts/WFVisualSans-SemiBold.woff2") format("woff2");
-}
 body {
-  font-family: "WF";
+  font-family: "Work Sans Variable";
 }
 
 .sr-only {
