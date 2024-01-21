@@ -1,5 +1,4 @@
 ---
-import type { keyof } from "valibot";
 import RedoitPojectImage from "../assets/images/redoit-project/redoit-ss-01.png";
 import LibrereadProjectImage from "../assets/images/03.png";
 import Project from "../components/Project.astro";
@@ -8,10 +7,11 @@ import Layout from "../layouts/Main.astro";
 const projectData = [
   {
     title: "Redoit",
-    description: `REDOIT! is a habit tracking app that helps you reach your goals by creating and tracking positive habits.`,
+    description: `A habit tracking app that helps you reach your goals by tracking your progress as you build new habits or quit old ones`,
     image: RedoitPojectImage,
     url: "/project/redoit",
     openInNewTab: false,
+    year: 2024,
   },
   {
     title: "librereads",
@@ -19,6 +19,7 @@ const projectData = [
     image: LibrereadProjectImage,
     url: "https://github.com/lmssiehdev/librereads",
     openInNewTab: true,
+    year: 2023,
   },
   // {
   //   title: "anyone can cook",

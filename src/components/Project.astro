@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import type { ProjectData } from "../pages/work.astro";
 const { data } = Astro.props as { data: ProjectData };
 
-const { image, title, description, url, openInNewTab } = data;
+const { image, title, description, url, openInNewTab, year } = data;
 ---
 
 <div
@@ -28,7 +28,7 @@ const { image, title, description, url, openInNewTab } = data;
       {description}
     </p>
     <div class="text-muted text-sm">
-      <div>Product Development · 2022</div>
+      <div>Development · {year}</div>
     </div>
   </div>
 </div>

@@ -3,7 +3,7 @@ import Layout from "../layouts/Main.astro";
 import Link from "../components/ui/Link.astro";
 import Role from "../components/ui/Role.astro";
 import Project from "../components/Project.astro";
-import RedoitPojectImage from "../assets/images/01.png";
+import RedoitPojectImage from "../assets/images/redoit-project/redoit-ss-01.png";
 import Wave from "../components/icons/Wave.astro";
 import Sparkles from "../components/icons/Sparkles.astro";
 import Mail from "../components/icons/Mail.astro";
@@ -12,8 +12,11 @@ import ProjectStars from "../components/ProjectStars.astro";
 const projectData = [
   {
     title: "Redoit",
-    description: `Redoit is an offline-first habit tracker, designed to help users build and maintain positive routines.`,
+    description: `A habit tracking app that helps you reach your goals by tracking your progress as you build new habits or quit old ones`,
     image: RedoitPojectImage,
+    url: "/project/redoit",
+    openInNewTab: false,
+    year: 2024,
   },
 ] as const;
 ---
@@ -35,7 +38,7 @@ const projectData = [
     </div>
     <div class="flex gap-2 my-4">
       {
-        ["Typescript", "React", "Vue"].map((text) => (
+        ["Typescript", "React", "Vue", "NextJS"].map((text) => (
           <Role color={text.toLowerCase()}>{text}</Role>
         ))
       }
@@ -71,6 +74,15 @@ const projectData = [
   </div>
   <!-- <p class="mt-4 mb-1.5">or find me at:</p> -->
   <div class="grid grid-cols-2 gap-2.5">
-    {Array("Github", "Twitter").map((text) => <Link>{text}</Link>)}
+    {
+      Array(
+        { name: "Github", url: "https://github.com/lmssiehdev" },
+        { name: "Twitter", url: "https://twitter.com/lmssiehdev" }
+      ).map(({ name, url }) => (
+        <Link target="_blank" href={url}>
+          {name}
+        </Link>
+      ))
+    }
   </div>
 </Layout>

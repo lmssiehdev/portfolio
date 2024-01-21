@@ -5,6 +5,8 @@ pubDate: "Jul 15 2022"
 heroImage: "/blog-placeholder-2.jpg"
 ---
 
+[ DO NOT READ, THIS IS A TEMPLATE ]
+
 Redoit is an offline-first habit tracker, designed to help users build and maintain positive routines.
 ![](../../assets/images/redoit-project/redoit-ss-01.png)
 #### My Role
