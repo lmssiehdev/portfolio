@@ -55,7 +55,8 @@ const currentPath = Astro.url.pathname;
                   "border-b-2": currentPath === "/work" ? true : false,
                 })}
               >
-                <a class="pb-4 cursor-pointer inline-block" href="/work">Work</a
+                <a class="pb-4 cursor-pointer inline-block" href="/work"
+                  >{currentPath} Work</a
                 >
               </li>
               <li
