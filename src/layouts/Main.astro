@@ -52,16 +52,15 @@ const currentPath = Astro.url.pathname;
               </li>
               <li
                 class={clsx(" flex-1 ", {
-                  "border-b-2": currentPath === "/work" ? true : false,
+                  "border-b-2": currentPath.includes("/work") ? true : false,
                 })}
               >
-                <a class="pb-4 cursor-pointer inline-block" href="/work"
-                  >{currentPath} Work</a
+                <a class="pb-4 cursor-pointer inline-block" href="/work">Work</a
                 >
               </li>
               <li
                 class={clsx(" flex-1 ", {
-                  "border-b-2": currentPath === "/blog" ? true : false,
+                  "border-b-2": currentPath.includes("/blog") ? true : false,
                 })}
               >
                 <a class="pb-4 cursor-pointer inline-block" href="/blog">Blog</a
