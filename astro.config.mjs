@@ -8,6 +8,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://lmssieh.com",
   integrations: [mdx(), sitemap(), tailwind()],
+  trailingSlash: "never",
   experimental: {
     viewTransitions: true,
     assets: true,
