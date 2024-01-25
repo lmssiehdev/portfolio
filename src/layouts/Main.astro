@@ -36,7 +36,9 @@ const currentPath = Astro.url.pathname;
       <div class="m-4 p-3 bg-black/50 rounded">
         <div>
           <div>
-            <div class="font-semibold text-lg">lmssieh</div>
+            <div class="font-semibold text-lg">
+              lmssieh {currentPath}
+            </div>
             <!-- <div class="text-muted">lmssieh#0000</div> -->
           </div>
           <div class="my-5">
@@ -52,7 +54,7 @@ const currentPath = Astro.url.pathname;
               </li>
               <li
                 class={clsx(" flex-1 ", {
-                  "border-b-2": currentPath === "/work" ? true : false,
+                  "border-b-2": currentPath.startsWith("/work"),
                 })}
               >
                 <a class="pb-4 cursor-pointer inline-block" href="/work">Work</a
@@ -60,7 +62,7 @@ const currentPath = Astro.url.pathname;
               </li>
               <li
                 class={clsx(" flex-1 ", {
-                  "border-b-2": currentPath === "/blog" ? true : false,
+                  "border-b-2": currentPath.startsWith("/blog"),
                 })}
               >
                 <a class="pb-4 cursor-pointer inline-block" href="/blog">Blog</a
