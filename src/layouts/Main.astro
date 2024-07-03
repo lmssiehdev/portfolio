@@ -1,6 +1,8 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import { Image } from "astro:assets";
 import clsx from "clsx";
+import ProfileImage from "../assets/images/profile.jpeg";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import "@fontsource-variable/work-sans";
@@ -19,15 +21,16 @@ const currentPath = Astro.url.pathname;
     <main
       class="max-w-xl w-full bg-background rounded overflow-hidden shadow-xl"
     >
-      <header class="min-h-[106px] bg-[#896039] relative mb-14">
+      <header class="min-h-[106px] bg-[#fffff0] relative mb-14">
         <div class="realtive" transition:persist>
           <div
             class="h-[120px] w-[120px] bg-background rounded-full overflow-hidden flex items-center justify-center absolute top-[30px] left-[22px] right-0"
           >
             <div class="w-[90%] h-[90%] rounded-full overflow-hidden">
-              <img
+              <Image
                 class="h-full w-full"
-                src="https://cdn.discordapp.com/avatars/1056973007437971497/f5b449cacb3f3afd9ef3ee849d3b1257.webp"
+                src={ProfileImage}
+                alt="profile pic"
               />
             </div>
           </div>
