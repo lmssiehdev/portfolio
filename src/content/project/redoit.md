@@ -6,6 +6,9 @@ heroImage: "/blog-placeholder-2.jpg"
 ---
 
 Redoit is an offline-first habit tracker designed to help users build and maintain positive routines.
+
+<a href="https://offline.redoit.app" target="_blank">Try the offline version ↗</a>
+
 ![](../../assets/images/redoit-project/redoit-ss-01.png)
 
 ### My Role
@@ -24,7 +27,7 @@ Hosting the app on Vercel was a natural decision, given its status as the defaul
 
 Opting for React was a logical choice, particularly with the future development of a mobile version using React Native in mind. This approach will enable better code sharing between the web and mobile versions. I used Replicache to handle offline-first functionality. Serving as the backend framework is Next.js, and the decision to host the application on Vercel was a natural one, given its standing as the default platform for Next.js projects.
 
-![](../../assets/images/redoit-project/redoit-ss-02.png)
+![](../../assets/images/redoit-project/redoit-ss-02-updated.png)
 
 ### Overcoming Challenges and Thought Process
 
