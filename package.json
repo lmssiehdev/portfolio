@@ -9,10 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/mdx": "^4.3.9",
     "@astrojs/rss": "^4.0.13",
     "@astrojs/sitemap": "^3.6.0",
+    "@midudev/tailwind-animations": "^0.2.0",
+    "@tailwindcss/vite": "^4.1.16",
     "astro": "^5.15.3",
-    "sharp": "^0.34.3"
+    "sharp": "^0.34.3",
+    "tailwindcss": "^4.1.16"
   }
 }
