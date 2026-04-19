@@ -1,16 +1,14 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 import { emojiToTwemoji } from "../utils";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body
+
+<MainLayout>
+  <main
     class="min-h-screen flex items-center justify-center bg-purple-300 font-questrial px-2"
   >
     <div class="min-h-[600px] max-w-[600px] w-full p-6 md:p-10 my-20 bg-[#F9F5EC] rounded shadow-sm">
@@ -132,50 +130,5 @@ import { emojiToTwemoji } from "../utils";
         </div>
       </footer>
     </div>
-  </body>
-</html>
-
-<style>
-  :root {
-    --pockota-font: "Pockota", sans-serif;
-  }
-  @font-face {
-    font-family: "Pockota";
-    src: url("/fonts/Pockota-Regular.woff2") format("woff2");
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Pockota";
-    src: url("/fonts/Pockota-Medium.woff2") format("woff2");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "Questrial";
-    src: url("/fonts/Questrial-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Augillion";
-    src: url("/fonts/Augillion.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  .font-augillion {
-    font-family: "Augillion";
-  }
-  .font-questrial {
-    font-family: "Questrial";
-  }
-  .font-pockoto {
-    font-family: "Pockota";
-  }
-</style>
+</main>
+</MainLayout>

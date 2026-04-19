@@ -1,0 +1,67 @@
+---
+title: 'Discord Search Just SUCKS'
+description: 'Lorem ipsum dolor sit amet'
+pubDate: 'Jul 08 2022'
+heroImage: '../../assets/blog-placeholder-3.jpg'
+---
+There's a trend of open source projects and new-age startups defaulting to Discord to host their communities. Companies are even shutting down active forums to move to Discord[1], that thread has 580+ replies, and almost all of them oppose the move.
+
+Yet the migration continues. Discord is becoming the norm, and it's understandable why, the target audience is likely already there, so getting them to join a server is far easier than asking them to create yet another forum account. Interactions feel personal and immediate. It's a familiar place to build community and actually enjoyable to hang out in, something traditional forums can't easily match.
+
+
+But here's the problem: Discord was initially built for gamers to hang out and chat as they play their games, and although they have been making it friendly for other types of communities, it's still far away from being a Forum replacement for a lot of reasons, but I would like to focus on the search part, since my experience with using the Discord search has been nothing but frustrating.
+
+## Search Sucks, But It's Not Broken
+
+Discord search has decent filters and works fine for simple queries where you know the exact thing you are looking for, and that's usually fine for most use cases.
+
+But as a developer who's actively using Discord to not only fill issues, report bugs but also try to find solutions to those bugs, it quickly falls short for a few reasons.
+
+
+#### Too Much Noise, Too Few Tools
+
+I still remember trying to search for a keyword that one of those XP spam bots also used in their embeds. Out of 10 results, 8 were from the bot. and there was no option to filter it out by users only, I navigated 6 pages deep before giving up.
+
+Discord eventually added the ability to filter out bot results. But there are still too many missing tools to limit the noise. You can't search only in forum posts (which tend to have more thoughtful conversations). You can't exclude channels that have are mostly spam (ex: #bot-commands), and it has minimal typo tolerance, an extra (s) at the end of a word would result in no results.
+
+This consistently results in me giving up without finding anything useful.
+
+
+#### No Cross-Server Search
+
+One thing that's rarely mentioned is that errors are complex. Something crashes unexpectedly. I try to narrow it down. Is it my ORM? (They have a Discord.) Could it be my database driver? (They have a forum.) Or the runtime? (They are also on Discord.) Or some combination?
+
+Trying to find a solution for this would require me [to finish] 
+Finding solutions for problems like this used to be straightforward. Google did all the heavy lifting, it indexed every related thread on each forum, ranked them, then displayed the results it thought were most relevant.
+
+But now that communities are using Discord, not only do you need to know which Discord servers to join and search (and hoping the search actually shows something useful), you have to repeat that process individually for every related community. There's no way to search across all of them at once.
+
+#### No Context
+
+Unlike Google, which has semantic search and sophisticated ranking, Discord's search is purely keyword-based. It returns results based roughly on 1:1 query matches without understanding meaning or intent. There's no semantic understanding of what you're actually trying to find.
+
+This resulted in many duplicates threads created for the same issue, instead of just one thread with all the relvant information.
+
+## The solution?
+
+Better server organization can help. Dedicated forum channels for support topics, clear rules to keep discussions on topic, these practices make Discord more navigable and are worth adopting.
+
+But those don't change that Discord's search simply wasn't designed for that sort of retrieval. More importantly, all of these problems would be solved once the content gets indexed by search engines.
+
+This is why there's vocal pushback against communities moving to Discord and almost all their concern is about the discoverability.
+
+> Discord is the darkest of deep web: no search engine indexation, invitation-only, depends on a heavy client to run
+>> [Please stop making Discord servers for things that shouldn't be Discord servers
+](https://www.pcgamer.com/please-stop-making-discord-servers-for-things-that-shouldnt-be-discord-servers/)
+
+But as a developer who loves to approach problems from different angles, What if communities continue to use Discord as their community platform, but turn specific support channels (ex: #help, #support) into a web accessible forums?
+
+and that's exactly why I built Velumn, a platform that indexes select channels and turns them into a beautiful (don't take my word for it), seo friendly forum.
+
+<img width={1020} height={510} alt="" src='/blog-placeholder-5.jpg'/>
+
+Here is an example of a thread mirrored directly from Discord, live on the web: [a thread pulled directly from Discord](https://velumn.com/thread/1436230598959300718/a_demo_thread)
+
+> So we go back to the forum age with discord as the underlying infrastructure (quote about velumn)
+
+[1] https://forum.affinity.serif.com/index.php?/topic/235712-important-update-affinity-forum-transition/

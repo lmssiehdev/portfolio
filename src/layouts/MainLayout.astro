@@ -1,0 +1,59 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style>
+  :root {
+    --pockota-font: "Pockota", sans-serif;
+  }
+  @font-face {
+    font-family: "Pockota";
+    src: url("/fonts/Pockota-Regular.woff2") format("woff2");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Pockota";
+    src: url("/fonts/Pockota-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Questrial";
+    src: url("/fonts/Questrial-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Augillion";
+    src: url("/fonts/Augillion.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .font-augillion {
+    font-family: "Augillion";
+  }
+  .font-questrial {
+    font-family: "Questrial";
+  }
+  .font-pockoto {
+    font-family: "Pockota";
+  }
+</style>
