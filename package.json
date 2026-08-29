@@ -10,13 +10,14 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
-    "@astrojs/mdx": "^4.3.9",
-    "@astrojs/rss": "^4.0.13",
     "@astrojs/sitemap": "^3.6.0",
-    "@midudev/tailwind-animations": "^0.2.0",
-    "@tailwindcss/vite": "^4.1.16",
-    "astro": "^5.15.3",
-    "sharp": "^0.34.3",
-    "tailwindcss": "^4.1.16"
+    "astro": "^5.15.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@tailwindcss/vite": "^4.3.3",
+    "roughjs": "^4.6.6",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.0"
   }
 }

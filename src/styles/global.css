@@ -1,3 +1,120 @@
 @import "tailwindcss";
 
-@plugin "@midudev/tailwind-animations";
+@font-face {
+  font-family: "Grug Hand";
+  src: url("/fonts/GrugHand-Light.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Grug Hand";
+  src: url("/fonts/GrugHand-Regular.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  color-scheme: dark;
+  --ink: #fff;
+  --paper: #000;
+  --focus: var(--ink);
+  --max-width: 1180px;
+  --page-gutter: clamp(20px, 5vw, 72px);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ink: #000;
+  --paper: #fff;
+}
+
+html {
+  min-width: 320px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Grug Hand", ui-rounded, system-ui, sans-serif;
+  font-feature-settings: "calt" 1, "rand" 1;
+  font-size: 21px;
+  font-variant-ligatures: contextual;
+  font-weight: 400;
+  letter-spacing: 0.012em;
+  line-height: 1.38;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.theme-glyph {
+  display: block;
+  font-size: 31px;
+  line-height: 1;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.scratch-redaction {
+  position: relative;
+  display: inline-block;
+  margin-inline: 0.08em 0.04em;
+  color: var(--ink);
+  font-size: 1em;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.scratch-redaction__name {
+  display: inline-block;
+  padding-inline: 0.08em;
+}
+
+.scratch-redaction__ink {
+  position: absolute;
+  z-index: 1;
+  inset: -0.06em -0.08em;
+  width: calc(100% + 0.16em);
+  height: calc(100% + 0.12em);
+  overflow: visible;
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .theme-glyph {
+    font-size: 27px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

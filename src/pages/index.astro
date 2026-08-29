@@ -1,181 +1,65 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-import "../styles/global.css";
-import { emojiToTwemoji } from "../utils";
+import rough from "roughjs";
+
+const scratchGenerator = rough.generator();
+const scratch = scratchGenerator.rectangle(-4, 1, 238, 62, {
+  fill: "currentColor",
+  fillStyle: "cross-hatch",
+  hachureAngle: 72,
+  hachureGap: 5.5,
+  fillWeight: 2.2,
+  stroke: "none",
+  roughness: 1.7,
+  bowing: 1.3,
+  seed: 241,
+});
+
+const scratchPaths = scratchGenerator.toPaths(scratch).map((path) => ({
+  ...path,
+  d: path.d.replace(/-?\d+\.\d+/g, (value) => Number(value).toFixed(2)),
+}));
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <script src="/theme.js" defer is:inline></script>
   </head>
-  <body
-    class="min-h-screen flex items-center justify-center bg-purple-300 font-questrial px-2"
-  >
-    <div class="min-h-[600px] max-w-[600px] w-full p-6 md:p-10 my-20 bg-[#F9F5EC] rounded shadow-sm">
-      <header class="mb-8">
-        <h1 class="font-augillion text-4xl font-semibold mb-2">
-          Lmssieh<span class="text-violet-500">.</span>
-        </h1>
-        <p class="mb-1.5">
-          Full stack TypeScript
-          <img
-            class="inline-block size-5 hover:animate-sway cursor-pointer"
-            src="/icons/typescript.svg"
-            alt="TypeScript icon"
-            draggable="false"
-          />
-          developer building web apps with a focus on user experience, currently
-          exploring systems programming with Zig
-          <img
-            class="inline-block size-5 hover:animate-sway cursor-pointer"
-            src="/icons/zig.svg"
-            alt="Zig icon"
-            draggable="false"
-          />
-        </p>
-        <p>
-          In my free time, I contribute to open source projects like <a href="https://github.com/survev/survev">survev</a> and
-          its various forks.
-        </p>
-      </header>
+  <body>
+    <a class="fixed top-3 left-3 z-20 -translate-y-[150%] bg-[var(--ink)] px-3.5 py-2.5 text-[var(--paper)] focus:translate-y-0" href="#content">Skip to content</a>
 
-      <section class="mb-8">
-        <h2 class="font-augillion text-2xl mb-2">
-          <img
-            class="inline-block size-6 align-sub mr-1.5"
-            src={emojiToTwemoji("✨")}
-            alt="Sparkle emoji"
-            draggable="false"
-          />
-          Featured
-        </h2>
-        <div>
-          <article
-            class="hover:bg-black/5 rounded p-2 -m-2 transition-colors cursor-pointer mb-2"
-          >
-            <h3>
-              <span class="text-lg font-bold">Velumn</span>
-              <span class="text-neutral-700 text-normal font-normal"
-                >- The community platform for Discord</span
-              >
-            </h3>
-            <p class="text-sm text-neutral-700">
-              Velumn turns your Discord server into an SEO-optimized forum. Take
-              advantage of Discord to grow your community without any of the
-              downsides.
-            </p>
-          </article>
-          <article
-            class="hover:bg-black/5 rounded p-2 -m-2 transition-colors cursor-pointer"
-          >
-            <h3>
-              <span class="text-lg font-bold">Redoit</span>
-              <span class="text-neutral-700 text-normal font-normal"
-                >- A habit tracking app</span
-              >
-            </h3>
-            <p class="text-sm text-neutral-700">
-              That helps you reach your goals by tracking your progress as you
-              build new habits or quit old ones
-            </p>
-          </article>
+    <header class="sticky top-0 z-10 isolate flex h-[84px] min-h-[84px] w-full items-center justify-between gap-[clamp(28px,4vw,64px)] bg-[var(--paper)] px-[var(--page-gutter)] max-[760px]:h-[68px] max-[760px]:min-h-[68px] max-[760px]:gap-2 max-[760px]:px-3" aria-label="Site header">
+      <a class="whitespace-nowrap text-2xl leading-none tracking-[0.01em] no-underline max-[760px]:inline-flex max-[760px]:min-h-11 max-[760px]:items-center max-[760px]:text-lg" href="/" aria-label="lmssieh, home">lmssieh<span class="max-[420px]:hidden">.dev</span></a>
+
+      <nav class="ml-auto flex min-w-0 items-center gap-[clamp(20px,2.4vw,36px)] max-[760px]:gap-1" aria-label="Primary navigation">
+        <div class="flex items-center gap-[clamp(24px,3vw,44px)] max-[760px]:gap-1">
+          <a class="inline-flex min-h-11 items-center whitespace-nowrap text-2xl no-underline hover:underline hover:underline-offset-[5px] max-[760px]:px-1.5 max-[760px]:text-lg" href="https://github.com/lmssiehdev">github</a>
+          <a class="inline-flex min-h-11 items-center whitespace-nowrap text-2xl no-underline hover:underline hover:underline-offset-[5px] max-[760px]:px-1.5 max-[760px]:text-lg" href="mailto:lmssieh@proton.com">email</a>
         </div>
+        <button class="grid size-11 flex-none cursor-pointer place-items-center border-0 bg-transparent p-0 text-[var(--ink)] transition-transform duration-150 hover:scale-[1.08] active:scale-[0.97] motion-reduce:transition-none" type="button" data-theme-toggle aria-label="Change color scheme"></button>
+      </nav>
+    </header>
+
+    <main id="content">
+      <section class="mx-auto w-[min(100%,calc(var(--max-width)+(2*var(--page-gutter))))] px-[var(--page-gutter)] pt-[clamp(72px,11vw,148px)] pb-[clamp(96px,14vw,180px)] max-[760px]:pt-[clamp(52px,16vw,88px)] max-[760px]:pb-24" aria-labelledby="intro-title">
+        <h1 class="m-0 max-w-[32ch] text-[clamp(38px,4.35vw,64px)] leading-[1.16] font-normal tracking-[0.004em] text-pretty max-[760px]:text-[clamp(31px,8.4vw,46px)] max-[760px]:leading-[1.17]" id="intro-title">I’m lmssieh, a developer who ships with effort, care and taste.</h1>
+
+        <p class="mt-[0.9em] max-w-[32ch] text-[clamp(38px,4.35vw,64px)] leading-[1.16] font-light tracking-[0.004em] text-pretty max-[760px]:text-[clamp(31px,8.4vw,46px)] max-[760px]:leading-[1.17]">
+          Currently a founding engineer at <span class="scratch-redaction" data-private-company aria-hidden="true">
+            <span class="scratch-redaction__name">nice try</span>
+            <svg class="scratch-redaction__ink" viewBox="0 0 230 64" preserveAspectRatio="none" focusable="false">
+              {scratchPaths.map((path) => <path d={path.d} fill={path.fill} stroke={path.stroke} stroke-width={path.strokeWidth} />)}
+            </svg> </span
+          ><span class="sr-only">a private company</span>, working across product, engineering and growth.
+        </p>
+
+        <p class="mt-[0.9em] max-w-[32ch] text-[clamp(38px,4.35vw,64px)] leading-[1.16] font-light tracking-[0.004em] text-pretty max-[760px]:text-[clamp(31px,8.4vw,46px)] max-[760px]:leading-[1.17]">
+          Find me on <a class="underline decoration-1 underline-offset-[0.14em] hover:decoration-2" href="https://github.com/lmssiehdev">GitHub</a> or <a class="underline decoration-1 underline-offset-[0.14em] hover:decoration-2" href="mailto:lmssieh@proton.com">send me an email</a>.
+        </p>
       </section>
-
-      <footer>
-        <h2 class="font-augillion text-2xl mb-2">
-          <img
-            class="inline-block size-6 align-sub mr-1.5"
-            src={emojiToTwemoji("📬")}
-            alt="Email emoji"
-            draggable="false"
-          />
-          Get in touch!
-        </h2>
-        <div>
-          <p class="mb-1.5">
-            Find me at: <a
-              href="https://github.com/lmssiehdev"
-              class="text-neutral-700 group font-semibold hover:text-violet-500 transition-colors"
-              >GitHub <svg
-                class="group-hover:text-violet-500 size-5 inline-block align-sub"
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                fill="currentColor"
-                viewBox="0 0 256 256"
-                ><path
-                  d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"
-                ></path></svg
-              ></a
-            >, <a
-              href="https://twitter.com/yourusername"
-              class="group font-semibold hover:text-violet-500"
-              >Twitter <svg
-                class="group-hover:text-violet-500 size-5 inline-block align-sub"
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                fill="currentColor"
-                viewBox="0 0 256 256"
-                ><path
-                  d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
-                ></path></svg
-              ></a
-            >
-          </p>
-          <p>
-            Want to chat? Feel free to email me at lmssieh@proton.com
-          </p>
-        </div>
-      </footer>
-    </div>
+    </main>
   </body>
 </html>
-
-<style>
-  :root {
-    --pockota-font: "Pockota", sans-serif;
-  }
-  @font-face {
-    font-family: "Pockota";
-    src: url("/fonts/Pockota-Regular.woff2") format("woff2");
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Pockota";
-    src: url("/fonts/Pockota-Medium.woff2") format("woff2");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: "Questrial";
-    src: url("/fonts/Questrial-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Augillion";
-    src: url("/fonts/Augillion.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  .font-augillion {
-    font-family: "Augillion";
-  }
-  .font-questrial {
-    font-family: "Questrial";
-  }
-  .font-pockoto {
-    font-family: "Pockota";
-  }
-</style>
