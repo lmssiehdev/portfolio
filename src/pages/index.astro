@@ -1,5 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import RoosterMark from "../components/RoosterMark.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import rough from "roughjs";
 
@@ -32,7 +33,9 @@ const scratchPaths = scratchGenerator.toPaths(scratch).map((path) => ({
     <a class="fixed top-3 left-3 z-20 -translate-y-[150%] bg-[var(--ink)] px-3.5 py-2.5 text-[var(--paper)] focus:translate-y-0" href="#content">Skip to content</a>
 
     <header class="sticky top-0 z-10 isolate flex h-[84px] min-h-[84px] w-full items-center justify-between gap-[clamp(28px,4vw,64px)] bg-[var(--paper)] px-[var(--page-gutter)] max-[760px]:h-[68px] max-[760px]:min-h-[68px] max-[760px]:gap-2 max-[760px]:px-3" aria-label="Site header">
-      <a class="whitespace-nowrap text-2xl leading-none tracking-[0.01em] no-underline max-[760px]:inline-flex max-[760px]:min-h-11 max-[760px]:items-center max-[760px]:text-lg" href="/" aria-label="lmssieh, home">lmssieh<span class="max-[420px]:hidden">.dev</span></a>
+      <a class="grid size-12 flex-none place-items-center text-[var(--ink)] no-underline transition-transform active:scale-[0.96] motion-reduce:transition-none max-[760px]:size-11" href="/" aria-label="lmssieh, home">
+        <RoosterMark />
+      </a>
 
       <nav class="ml-auto flex min-w-0 items-center gap-[clamp(20px,2.4vw,36px)] max-[760px]:gap-1" aria-label="Primary navigation">
         <div class="flex items-center gap-[clamp(24px,3vw,44px)] max-[760px]:gap-1">

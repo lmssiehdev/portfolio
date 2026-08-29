@@ -73,6 +73,14 @@ button {
   line-height: 1;
 }
 
+.rooster-mark {
+  display: block;
+  width: 48px;
+  height: 48px;
+  overflow: visible;
+  transform: translate(-9px, -1px);
+}
+
 :focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 4px;
@@ -105,6 +113,12 @@ button {
 }
 
 @media (max-width: 760px) {
+  .rooster-mark {
+    width: 43px;
+    height: 43px;
+    transform: translateY(-1px);
+  }
+
   .theme-glyph {
     font-size: 27px;
   }
