@@ -6,7 +6,7 @@ import cloudflare from '@astrojs/cloudflare';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://lmssideh.com',
+  site: 'https://lmssieh.com',
   adapter: cloudflare(),
   integrations: [sitemap()],
   vite: {
